@@ -1,0 +1,56 @@
+# Python caches
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Virtual environments
+venv/
+.venv/
+env/
+.env/
+
+# Local environment files
+.env
+.env.local
+.env.*.local
+!.env.example
+
+# IDE/editor files
+.idea/
+.vscode/
+*.swp
+*.swo
+*.tmp
+*.bak
+~$*
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs and runtime files
+*.log
+logs/
+tmp/
+temp/
+
+# Docker/local compose overrides
+docker-compose.override.yml
+
+# Data folders are optional and may contain private or heavy datasets.
+# Keep only explicit small examples if they are intentionally added.
+data/
+!data/.gitkeep
+!data/examples/
+!data/examples/**
+
+# Model weights are intentionally NOT ignored here.
+# They are tracked by Git LFS via .gitattributes:
+# models/weights/**/*.pth
+

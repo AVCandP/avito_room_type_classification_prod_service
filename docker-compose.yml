@@ -1,0 +1,11 @@
+﻿services:
+  room-classifier-ui:
+    build: .
+    container_name: avito-room-classifier-ui
+    ports:
+      - "7860:7860"
+    environment:
+      ROOM_MODEL_WEIGHTS_DIR: /models/weights
+      FORCE_CPU: "1"
+    volumes:
+      - ./models/weights:/models/weights:ro

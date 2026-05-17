@@ -1,0 +1,12 @@
+﻿__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+venv/
+.venv/
+outputs/
+*.log
+artifacts/stacking/oof_meta.csv
+artifacts/stacking/submission.csv
+models/weights/
