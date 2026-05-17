@@ -3,7 +3,7 @@
 Целевая директория:
 
 ```text
-E:\Python\MIFI\prectice2curse\avito_room_type_classification_prod_service
+.\prectice2curse\avito_room_type_classification_prod_service
 ```
 
 Цель миграции - собрать из исследовательских и демонстрационных частей проекта единую продуктовую папку, которую можно развернуть локально или в Docker и показать заказчику/экспертам как работающий сервис распознавания типа комнаты по фотографии.
@@ -82,13 +82,13 @@ avito_room_type_classification_prod_service/
 Источник:
 
 ```text
-E:\Python\MIFI\prectice2curse\avito_solution_bundle\weights
+.\prectice2curse\avito_solution_bundle\weights
 ```
 
 Назначение:
 
 ```text
-E:\Python\MIFI\prectice2curse\avito_room_type_classification_prod_service\models\weights
+.\prectice2curse\avito_room_type_classification_prod_service\models\weights
 ```
 
 Файлы:
@@ -106,13 +106,13 @@ fold3/best_model.pth
 Источник:
 
 ```text
-E:\Python\MIFI\prectice2curse\avito_room_type_classification_const\micro_interface
+.\prectice2curse\avito_room_type_classification_const\micro_interface
 ```
 
 Назначение:
 
 ```text
-E:\Python\MIFI\prectice2curse\avito_room_type_classification_prod_service\app
+.\prectice2curse\avito_room_type_classification_prod_service\app
 ```
 
 Копировать:
@@ -136,13 +136,13 @@ __pycache__/
 Источник:
 
 ```text
-E:\Python\MIFI\prectice2curse\avito_room_type_classification_const\micro_interface
+.\prectice2curse\avito_room_type_classification_const\micro_interface
 ```
 
 Назначение:
 
 ```text
-E:\Python\MIFI\prectice2curse\avito_room_type_classification_prod_service
+.\prectice2curse\avito_room_type_classification_prod_service
 ```
 
 Копировать:
@@ -160,13 +160,13 @@ docker-compose.yml
 Источник:
 
 ```text
-E:\Python\MIFI\prectice2curse\avito_solution_bundle
+.\prectice2curse\avito_solution_bundle
 ```
 
 Назначение:
 
 ```text
-E:\Python\MIFI\prectice2curse\avito_room_type_classification_prod_service
+.\prectice2curse\avito_room_type_classification_prod_service
 ```
 
 Копировать:
@@ -188,12 +188,12 @@ requirements.txt
 Копировать в `docs/`:
 
 ```text
-E:\Python\MIFI\prectice2curse\FINAL_PROJECT_REPORT_AVITO_ROOM_CLASSIFICATION.md
-E:\Python\MIFI\prectice2curse\avito_room_type_classification_const\PROJECT_DESCRIPTION.md
-E:\Python\MIFI\prectice2curse\avito_room_type_classification_const\EXPERIMENT_REPORT.md
-E:\Python\MIFI\prectice2curse\avito_solution_bundle\PROJECT_DESCRIPTION.md
-E:\Python\MIFI\prectice2curse\avito_room_type_classification_av\README.md
-E:\Python\MIFI\prectice2curse\avito_room_type_classification_av\conception\concept_CV_flat_rooms.md
+.\prectice2curse\FINAL_PROJECT_REPORT_AVITO_ROOM_CLASSIFICATION.md
+.\prectice2curse\avito_room_type_classification_const\PROJECT_DESCRIPTION.md
+.\prectice2curse\avito_room_type_classification_const\EXPERIMENT_REPORT.md
+.\prectice2curse\avito_solution_bundle\PROJECT_DESCRIPTION.md
+.\prectice2curse\avito_room_type_classification_av\README.md
+.\prectice2curse\avito_room_type_classification_av\conception\concept_CV_flat_rooms.md
 ```
 
 ## 3. Подготовка перед миграцией
@@ -201,7 +201,7 @@ E:\Python\MIFI\prectice2curse\avito_room_type_classification_av\conception\conce
 Открыть PowerShell:
 
 ```powershell
-cd E:\Python\MIFI\prectice2curse
+cd .\prectice2curse
 ```
 
 Проверить наличие источников:
@@ -220,8 +220,8 @@ Test-Path .\FINAL_PROJECT_REPORT_AVITO_ROOM_CLASSIFICATION.md
 Если целевая папка уже содержит файлы, сделать резервную копию:
 
 ```powershell
-$target = "E:\Python\MIFI\prectice2curse\avito_room_type_classification_prod_service"
-$backup = "E:\Python\MIFI\prectice2curse\avito_room_type_classification_prod_service_backup_$(Get-Date -Format yyyyMMdd_HHmmss)"
+$target = ".\prectice2curse\avito_room_type_classification_prod_service"
+$backup = ".\prectice2curse\avito_room_type_classification_prod_service_backup_$(Get-Date -Format yyyyMMdd_HHmmss)"
 if (Test-Path $target) {
     if ((Get-ChildItem $target -Force | Measure-Object).Count -gt 0) {
         Copy-Item $target $backup -Recurse -Force
@@ -233,7 +233,7 @@ if (Test-Path $target) {
 ## 4. Создание продуктовой структуры
 
 ```powershell
-$root = "E:\Python\MIFI\prectice2curse"
+$root = ".\prectice2curse"
 $prod = Join-Path $root "avito_room_type_classification_prod_service"
 
 New-Item -ItemType Directory -Force $prod | Out-Null
@@ -252,7 +252,7 @@ New-Item -ItemType Directory -Force "$prod\docs" | Out-Null
 ### 5.1 UI
 
 ```powershell
-$root = "E:\Python\MIFI\prectice2curse"
+$root = ".\prectice2curse"
 $prod = Join-Path $root "avito_room_type_classification_prod_service"
 $ui = Join-Path $root "avito_room_type_classification_const\micro_interface"
 
@@ -328,7 +328,7 @@ ROOM_MODEL_WEIGHTS_DIR
 В продуктовой папке нужно запускать сервис с:
 
 ```powershell
-$env:ROOM_MODEL_WEIGHTS_DIR="E:\Python\MIFI\prectice2curse\avito_room_type_classification_prod_service\models\weights"
+$env:ROOM_MODEL_WEIGHTS_DIR=".\prectice2curse\avito_room_type_classification_prod_service\models\weights"
 python app\app.py
 ```
 
@@ -485,12 +485,12 @@ fold_weight_paths = [
 ## Запуск локально
 
 ```powershell
-cd E:\Python\MIFI\prectice2curse\avito_room_type_classification_prod_service
+cd .\prectice2curse\avito_room_type_classification_prod_service
 python -m venv venv
 .\venv\Scripts\Activate.ps1
 python -m pip install --upgrade pip
 pip install -r requirements.txt
-$env:ROOM_MODEL_WEIGHTS_DIR="E:\Python\MIFI\prectice2curse\avito_room_type_classification_prod_service\models\weights"
+$env:ROOM_MODEL_WEIGHTS_DIR=".\prectice2curse\avito_room_type_classification_prod_service\models\weights"
 python app\app.py
 ```
 
@@ -503,7 +503,7 @@ http://localhost:7860
 ## Docker
 
 ```powershell
-cd E:\Python\MIFI\prectice2curse\avito_room_type_classification_prod_service
+cd .\prectice2curse\avito_room_type_classification_prod_service
 docker compose up --build
 ```
 
@@ -574,7 +574,7 @@ artifacts/stacking/submission.csv
 ### 9.1 Проверка структуры
 
 ```powershell
-cd E:\Python\MIFI\prectice2curse\avito_room_type_classification_prod_service
+cd .\prectice2curse\avito_room_type_classification_prod_service
 
 Test-Path .\app\app.py
 Test-Path .\models\weights\fold1\best_model.pth
@@ -721,10 +721,10 @@ Gradio быстрее всего демонстрирует ценность м�
 
 ## 13. Однокомандный сценарий миграции
 
-Ниже полный PowerShell-сценарий. Его можно сохранить как `migrate_to_prod.ps1` и выполнить из `E:\Python\MIFI\prectice2curse`.
+Ниже полный PowerShell-сценарий. Его можно сохранить как `migrate_to_prod.ps1` и выполнить из `.\prectice2curse`.
 
 ```powershell
-$root = "E:\Python\MIFI\prectice2curse"
+$root = ".\prectice2curse"
 $prod = Join-Path $root "avito_room_type_classification_prod_service"
 $ui = Join-Path $root "avito_room_type_classification_const\micro_interface"
 $bundle = Join-Path $root "avito_solution_bundle"
