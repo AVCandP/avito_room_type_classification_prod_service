@@ -189,7 +189,7 @@ avito_room_type_classification_const/
 Дополнительно проверена соседняя директория:
 
 ```text
-E:\Python\MIFI\prectice2curse\avito_solution_bundle
+.\prectice2curse\avito_solution_bundle
 ```
 
 Это не тренировочный проект, а переносимый пакет для инференса и хранения финального решения. Он содержит код модели, конфиги трех фолдов, веса обученных моделей и готовые stacking-артефакты.
@@ -293,7 +293,7 @@ output_dir: weights/fold1
 Если нужно просто получить уже готовый результат, используйте:
 
 ```text
-E:\Python\MIFI\prectice2curse\avito_solution_bundle\stacking\submission.csv
+.\prectice2curse\avito_solution_bundle\stacking\submission.csv
 ```
 
 Если нужно заново сделать инференс по тестовым изображениям:
@@ -301,7 +301,7 @@ E:\Python\MIFI\prectice2curse\avito_solution_bundle\stacking\submission.csv
 1. Перейти в bundle:
 
 ```powershell
-cd E:\Python\MIFI\prectice2curse\avito_solution_bundle
+cd .\prectice2curse\avito_solution_bundle
 ```
 
 2. Активировать окружение или создать новое:
@@ -321,8 +321,8 @@ pip install -r requirements.txt
 4. Добавить данные. По текущим конфигам они ожидаются на уровень выше bundle:
 
 ```text
-E:\Python\MIFI\prectice2curse\test_df.csv
-E:\Python\MIFI\prectice2curse\test_images\test_images\*.jpg
+.\prectice2curse\test_df.csv
+.\prectice2curse\test_images\test_images\*.jpg
 ```
 
 Если данные лежат в другом месте, нужно поправить `test_csv` и `test_images_dir` в `configs/exp_convnext_base_clean_lr1e4_fold*.yaml`.
@@ -367,13 +367,13 @@ micro_interface/
 Сервис реализован на `Gradio`, контейнеризуется через `Docker` и не требует `test_df.csv` для одиночного изображения. По умолчанию веса ищутся в:
 
 ```text
-E:\Python\MIFI\prectice2curse\avito_solution_bundle\weights
+.\prectice2curse\avito_solution_bundle\weights
 ```
 
 Локальный запуск:
 
 ```powershell
-cd E:\Python\MIFI\prectice2curse\avito_room_type_classification_const\micro_interface
+cd .\prectice2curse\avito_room_type_classification_const\micro_interface
 python -m venv venv
 .\venv\Scripts\Activate.ps1
 pip install -r requirements.txt
@@ -383,7 +383,7 @@ python app.py
 Docker-запуск:
 
 ```powershell
-cd E:\Python\MIFI\prectice2curse\avito_room_type_classification_const\micro_interface
+cd .\prectice2curse\avito_room_type_classification_const\micro_interface
 docker compose up --build
 ```
 
@@ -396,7 +396,7 @@ http://localhost:7860
 Подробные требования к UI/UX, Docker, MLOps, лицензиям и фазам развития проекта вынесены в корневой документ:
 
 ```text
-E:\Python\MIFI\prectice2curse\UI_UX_ROOM_CLASSIFIER_SERVICE_GUIDE.md
+.\prectice2curse\UI_UX_ROOM_CLASSIFIER_SERVICE_GUIDE.md
 ```
 
 ## Приложение. Инструкция по запуску проекта
@@ -404,7 +404,7 @@ E:\Python\MIFI\prectice2curse\UI_UX_ROOM_CLASSIFIER_SERVICE_GUIDE.md
 ### 1. Перейти в директорию проекта
 
 ```powershell
-cd E:\Python\MIFI\prectice2curse\avito_room_type_classification_const
+cd .\prectice2curse\avito_room_type_classification_const
 ```
 
 ### 2. Подготовить Python
@@ -469,7 +469,7 @@ test_images/test_images/*.jpg
 С учетом текущих конфигов эти файлы и папки должны лежать на уровень выше проекта:
 
 ```text
-E:\Python\MIFI\prectice2curse\
+.\prectice2curse\
 |-- train_df.csv
 |-- val_df.csv
 |-- test_df.csv
