@@ -14,7 +14,7 @@
 ## Запуск локально
 
 ```powershell
-cd E:\Python\MIFI\prectice2curse\avito_room_type_classification_prod_service
+cd .\prectice2curse\avito_room_type_classification_prod_service
 python -m venv venv
 .\venv\Scripts\Activate.ps1
 python -m pip install --upgrade pip
@@ -28,7 +28,7 @@ python app\app.py
 ## Docker
 
 ```powershell
-cd E:\Python\MIFI\prectice2curse\avito_room_type_classification_prod_service
+cd .\prectice2curse\avito_room_type_classification_prod_service
 docker compose up --build
 ```
 
